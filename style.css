@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=M+PLUS+Code+Latin:wght@100..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root {
+    --bg-color: white;
+    --fg-color: #030609;
+    --link-color: #006000;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+	--bg-color: #030609;
+	--fg-color: white;
+	--link-color: #ddffee;
+    }
+}
+
+/* style */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-size: 24px;
+    font-family: "M PLUS Code Latin", monospace;
+}
+
+a, a:hover {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+section#header > h1 {
+    font-size: 2em;
+    font-family: "Roboto Slab", serif;
+}
+
+
+
+/* layout */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+div#main-container {
+    height: 98vh;
+    display: inline-grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+}
+
+section#content {
+    display:grid;
+    grid-template-columns: auto;
+    grid-gap: 2em;
+}
+
+@media (min-width: 700px) {
+    section#content {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-gap: 0em;
+    }
+
+    section#content > span {
+	padding: 10%;
+	border-right: 1px solid black;
+	border-color: var(--fg-color);
+    }
+
+    section#content > span:first-child {
+	padding-left: 0;
+    }
+
+    section#content > span:last-child {
+	padding-right: 0;
+	border-right: none;
+    }
+}
